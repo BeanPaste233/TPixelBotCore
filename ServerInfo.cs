@@ -10,13 +10,15 @@ namespace TPixelBotCore
 {
     public class ServerInfo
     {
+        public int ID { get; set; }
         public string IP { get; set; }
         public int Port { get; set; }
         public string Token { get; set; }
         public string RestUser { get; set; }
         public string RestPassword { get; set; }
-        public ServerInfo(string ip, int port, string token, string userName, string userPwd)
+        public ServerInfo(int id,string ip, int port, string token, string userName, string userPwd)
         {
+            ID = id;
             IP = ip;
             Port = port;
             Token = token;
@@ -72,6 +74,24 @@ namespace TPixelBotCore
                 var getToken = GetHttp(tokenUrl);
                 Token = getToken["token"].ToString();
             }
+        }
+        public JObject GetOnline() 
+        {
+            if (TokenTest())
+            {
+                string onlineUrl = ConvertToUrl() + $"/tpixel/online?token={Token}";
+                return GetHttp(onlineUrl);
+            }
+            return null;
+        }
+        public JObject GetServerInfo() 
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/tpixel/serverinfo?token={Token}";
+                return GetHttp(url);
+            }
+            return null;
         }
     }
 }
