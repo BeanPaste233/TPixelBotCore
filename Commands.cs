@@ -19,7 +19,7 @@ namespace TPixelBotCore
         public static async  void Run(MessageSource src)
         {
             await Task.Delay(3000);
-            src.Send("我在"); // 向来源发送“Hi!”
+            src.Send("我在");
         }
         [TextRoute("在线")] 
         public static async void Online(MessageSource src)
@@ -46,5 +46,13 @@ namespace TPixelBotCore
             }
             src.Send(message.ToArray());
         }
+        [TextRoute("注册")] 
+        public static async void Register(MessageSource src)
+        {
+            await Task.Delay(3000);
+            src.Send("注册尼玛呢？没写好"); 
+            
+        }
+        
     }
 }
