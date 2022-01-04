@@ -46,7 +46,7 @@
           "dependencies": {
             "Maila.Cocoa.Framework": {
               "target": "Package",
-              "version": "[2.1.4.2, )"
+              "version": "[2.1.5.2, )"
             }
           },
           "imports": [

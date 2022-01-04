@@ -1,4 +1,5 @@
-﻿using Maila.Cocoa.Framework;
+﻿using Maila.Cocoa.Beans.Models.Messages;
+using Maila.Cocoa.Framework;
 using Maila.Cocoa.Framework.Support;
 using System;
 using System.Collections.Generic;
@@ -23,19 +24,27 @@ namespace TPixelBotCore
         [TextRoute("在线")] 
         public static async void Online(MessageSource src)
         {
-            StringBuilder serverInfo = new StringBuilder();
+            if (!ConfigUtils.config.QQGroups.Contains(src.Group.Id))
+            {
+                return;
+            }
+            await Task.Delay(3000);
+            List<IMessage> message = new List<IMessage>();
             foreach (var server in ConfigUtils.Servers)
             {
                 var infoObj = server.GetServerInfo();
                 var plrObj = server.GetOnline();
-                if (infoObj!=null&&plrObj!=null)
+                if (infoObj != null && plrObj != null)
                 {
-                    serverInfo.AppendLine($"[{infoObj["name"].ToString()}]当前在线({infoObj["count"]}/{infoObj["maxcount"]})");
-                    serverInfo.AppendLine($"{plrObj["online"]}");
-                    serverInfo.AppendLine($"#f190");
+                    message.Add(new FaceMessage(190));
+                    message.Add(new PlainMessage($"[{infoObj["name"].ToString()}]当前在线({infoObj["count"]}/{infoObj["maxcount"]})"));
+                    message.Add(new FaceMessage(190));
+                    message.Add(new PlainMessage("\n"));
+                    message.Add(new PlainMessage($"{(plrObj["online"].ToString()==""?"当前无玩家在线": plrObj["online"].ToString())}"));
+                    message.Add(new PlainMessage("\n"));
                 }
             }
-            src.Send(serverInfo.ToString());
+            src.Send(message.ToArray());
         }
     }
 }

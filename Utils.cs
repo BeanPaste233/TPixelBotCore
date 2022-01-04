@@ -20,10 +20,5 @@ namespace TPixelBotCore
             var client = new HttpClient();
             return JObject.Parse(client.GetAsync(url).Result.Content.ReadAsStringAsync().Result);
         }
-
-
-        
-
-
     }
 }

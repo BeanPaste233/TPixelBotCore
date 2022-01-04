@@ -2,7 +2,7 @@
   "version": 3,
   "targets": {
     "net5.0": {
-      "Maila.Cocoa.Beans/1.1.4": {
+      "Maila.Cocoa.Beans/1.1.6": {
         "type": "package",
         "dependencies": {
           "System.Drawing.Common": "5.0.2"
@@ -14,10 +14,10 @@
           "lib/net5.0/Maila.Cocoa.Beans.dll": {}
         }
       },
-      "Maila.Cocoa.Framework/2.1.4.2": {
+      "Maila.Cocoa.Framework/2.1.5.2": {
         "type": "package",
         "dependencies": {
-          "Maila.Cocoa.Beans": "1.1.4",
+          "Maila.Cocoa.Beans": "1.1.6",
           "Newtonsoft.Json": "13.0.1"
         },
         "compile": {
@@ -88,29 +88,29 @@
     }
   },
   "libraries": {
-    "Maila.Cocoa.Beans/1.1.4": {
-      "sha512": "2CBpBC6Jncx/Y6pZSD7PDRLK3DwzRsxao1u0P1Lw4KOcVQhFtZP8TyDNGb3hlsJiYCiqcCrFcXVE63ZQsiVVYA==",
+    "Maila.Cocoa.Beans/1.1.6": {
+      "sha512": "ktmPilkrr/3p8IylwkD5HewgjWtRsuRCym53S1+0/qnpXgJ/6LpVb/AIuYc//ChfkbVXrkq2bRDnJuLFo5NHaQ==",
       "type": "package",
-      "path": "maila.cocoa.beans/1.1.4",
+      "path": "maila.cocoa.beans/1.1.6",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net5.0/Maila.Cocoa.Beans.dll",
         "lib/net5.0/Maila.Cocoa.Beans.xml",
-        "maila.cocoa.beans.1.1.4.nupkg.sha512",
+        "maila.cocoa.beans.1.1.6.nupkg.sha512",
         "maila.cocoa.beans.nuspec"
       ]
     },
-    "Maila.Cocoa.Framework/2.1.4.2": {
-      "sha512": "htHHWGqSsDT8LdR0gZ/Gz6/p3W9i4nNpGmYs/S3uRnpdVDFoV8wx5XbYBykSz3pJTgqhYlmyE+BDxlUGoFKW5g==",
+    "Maila.Cocoa.Framework/2.1.5.2": {
+      "sha512": "RW8liRuVVEy/SkzxOtuhqG5J/P7k2yPIvGTq/24NlsOOeZGcbIhbow5gBGdVgZZJaZ3HSbFq3MSlunw1R0dHrA==",
       "type": "package",
-      "path": "maila.cocoa.framework/2.1.4.2",
+      "path": "maila.cocoa.framework/2.1.5.2",
       "files": [
         ".nupkg.metadata",
         ".signature.p7s",
         "lib/net5.0/Maila.Cocoa.Framework.dll",
         "lib/net5.0/Maila.Cocoa.Framework.xml",
-        "maila.cocoa.framework.2.1.4.2.nupkg.sha512",
+        "maila.cocoa.framework.2.1.5.2.nupkg.sha512",
         "maila.cocoa.framework.nuspec"
       ]
     },
@@ -232,7 +232,7 @@
   },
   "projectFileDependencyGroups": {
     "net5.0": [
-      "Maila.Cocoa.Framework >= 2.1.4.2"
+      "Maila.Cocoa.Framework >= 2.1.5.2"
     ]
   },
   "packageFolders": {
@@ -281,7 +281,7 @@
         "dependencies": {
           "Maila.Cocoa.Framework": {
             "target": "Package",
-            "version": "[2.1.4.2, )"
+            "version": "[2.1.5.2, )"
           }
         },
         "imports": [

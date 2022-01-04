@@ -93,5 +93,132 @@ namespace TPixelBotCore
             }
             return null;
         }
+        public JObject AddBwl(string plrName) 
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/bwl/add?player={plrName}&token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject DelBwl(string plrName) 
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/bwl/del?player={plrName}&token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+
+        }
+        public JObject AddBan(string ip,string name,string reason) 
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/bans/create?ip={ip}&name={name}&reason={reason}&token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject DelBan(string name)
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/tpixel/delban?player={name}&token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject ListBans()
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/v2/bans/list?token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject ReadBans(string name)
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/v2/bans/read?ban={name}&type=name&caseinsensitive=true&token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject Broadcast(string msg)
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/v2/server/broadcast?msg={msg}&token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject Motd()
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/v3/server/motd?token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject Off(string msg)
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/v2/server/off?confirm=true&message={msg}&nosave=false&token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject RawCommand(string cmd)
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/v3/server/rawcmd?cmd={cmd}&token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject Reload()
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/v3/server/reload?token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject ListUsers()
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/v2/users/list?token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject ReadUser(string name)
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/v2/users/read?user={name}&type=name&token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
+        public JObject UpdateUser(string name,string pwd,string group)
+        {
+            if (TokenTest())
+            {
+                string url = ConvertToUrl() + $"/v2/users/update?user={name}&type=name&password={pwd}&group={group}&token={Token}";
+                return GetHttp(url);
+            }
+            return null;
+        }
     }
 }

@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <PackageReference Include="Maila.Cocoa.Framework" Version="2.1.4.2" />
+    <PackageReference Include="Maila.Cocoa.Framework" Version="2.1.5.2" />
   </ItemGroup>
 
 </Project>

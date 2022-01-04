@@ -11,6 +11,9 @@ namespace TPixelBotCore
         public string VerifyKey { get; set; }
         public long BotAccount { get; set; }
         public int TmodPort { get; set; }
+        public List<long> QQGroups = new List<long>();
+        public List<long> Admins = new List<long>();
+        public long OwnerQQ { get; set; }
         public Config(string key,int account) {
             VerifyKey = key;
             BotAccount = account;
